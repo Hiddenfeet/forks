@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #1c1e21;
+  color: white;
+}
+
+header {
+  background-color: #161e2b;
+  color: #fff;
+  height: 80px; 
+}
+
+#header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 100%; 
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#small-header-content {
+  display: none;
+}
+
+.header-button {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.header-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-button:hover {
+  background: rgba(31, 38, 135, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.57);
+}
+
+.header-button:hover::before {
+  opacity: 1;
+}
+
+#hamburger-icon {
+  font-size: 2.5em;
+  z-index: 900;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 900;
+}
+
+.logo img {
+  width: 60px; 
+  height: 60px; 
+}
+
+.logo h1 {
+  margin: 0; 
+  line-height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 6rem;
+  background-color: #161e2b;
+  color: white;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons img {
+  height: 32px;
+  width: 32px;
+  margin-right: 10px;
+}
+
+.footer-tag {
+  margin-top: 8px;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1rem;
+}
+footer a {
+  color: white;
+}
+
+.hero-section {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 4rem;
+}
+
+@media (max-width: 768px) {
+
+  .hidden {
+    display: none!important;
+  }
+
+  .fixed{
+    position: fixed!important;
+    float: top!important;
+  }
+
+  #header-content {
+    flex-direction: column;
+    padding-top: 80px;
+    position: fixed;
+    justify-content: flex-start;
+    background-color: #161e2b;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  #headernav{
+    width: 100%;
+  }
+
+  #navlist{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .navelement{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5em!important;
+    font-weight: bold;
+  }
+
+  #big-logo {
+    display: none!important;
+  }
+
+  #small-header-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 80px; 
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 900;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  nav {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .header-button {
+    font-size: 18px;
+    margin-right: 0;
+  }
+  main {
+    flex-direction: column;
+  }
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .bet-button-container{
+    display: flex;
+    gap: 15px!important;
+  }
+
+  #bet-amount-field {
+    margin: auto !important;
+    margin-bottom: 15px!important;
+  }
+
+  #glass-button {
+    margin: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .headertitle{
+    font-size: 1.2em;
+  }
+
+  .buttons-container{
+    flex-direction: column;
+  }
+
+  #bet-amount-field {
+    margin: auto !important;
+    margin-bottom: 10px!important;
+    padding: 8px;
+  }
+
+  #glass-button {
+    margin: 0;
+    font-size: 1em
+  }
+
+  .bet-button-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-top: 0px;
+    gap: 5px;
+
+  }
+}

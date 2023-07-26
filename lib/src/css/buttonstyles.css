@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 95vh;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 350px; 
+}
+
+#coinhead {
+  margin-top: 25px;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+.main-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border: white;
+}
+
+.gif-container {
+  position: relative;
+  overflow: hidden;
+}
+img {
+  width: 69%;
+  height: 100%;
+  display: inline-block;
+  object-fit: contain;
+}
+
+
+.balance-container {
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-shrink: 1;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.coin-button {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 8px 32px 0 rgba(204, 204, 102, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem;
+}
+
+.coin-button:hover {
+  background: rgba(204, 204, 102 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(204, 204, 102, 0.57);
+}
+.coin-button.selected {
+  background: rgba(204, 204, 102 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(204, 204, 102, 0.57);
+}
+
+#heads-button.selected {
+  background-color: #CCCC66;
+  color: #000000;
+}
+
+#tails-button.selected {
+  background-color: #CCCC66;
+  color: #000000;
+}
+
+
+.bet-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+#max-bet {
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  background-color: #212529;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#max-bet:hover {
+  background-color: #495057;
+}
+
+#glass-button, #glass-button-bet {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin-right: 20px;
+}
+
+#glass-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+#glass-button-bet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#glass-button:hover {
+  background: rgba(31, 38, 135, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.57);
+}
+#glass-button-bet{
+  margin-top: 1.5rem;
+  padding: 12px 64px;
+}
+#glass-button-bet:hover {
+  background: rgba(31, 38, 135, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.57);
+}
+
+#glass-button:hover::before {
+  opacity: 1;
+}
+#glass-button-bet:hover::before {
+  opacity: 1;
+}
+
+#bet-amount-field {
+  font-size: 18px;
+  padding: 12px 20px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: #1c1e21;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  color: white;
+  text-align: center;
+}
+
+#bet-amount-field:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#coinflip-container {
+  position: relative;
+}
+
+#coinflip-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+#coinflip-animation {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.coinhead{
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+.disclaimerBox {
+  position: relative;
+  bottom: 1rem;
+  width: auto;
+  background-color: #191a1c;
+  padding: 10px;
+  text-align: center;
+  margin-top: 60px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 8px;
+  margin-bottom: 7rem;
+
+}
+
+.disclaimerBox::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  top: -5px;
+  bottom: -5px;
+  z-index: -1;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #9f30a1d9, #1F2687);
+  animation: gradient 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.disclaimer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+select{
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 6px 16px;
+  box-shadow: 0 8px 32px 0 rgba(159, 48, 161, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
+}
+
+select option {
+  background-color: #222;
+  color: #fff;
+  border-radius: 50px;
+}
+
+select option:hover {
+  box-shadow: 0 0 10px 100px #555 inset;
+  background-color: #555;
+}
